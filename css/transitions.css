@@ -1,0 +1,8 @@
+html{background:#050505}
+body{transform:translate3d(0,0,0);transition:transform .44s cubic-bezier(.76,0,.24,1);will-change:transform;backface-visibility:hidden}
+body.page-enter-forward{transform:translate3d(0,100vh,0)}
+body.page-enter-backward{transform:translate3d(0,-100vh,0)}
+body.page-ready{transform:translate3d(0,0,0)}
+body.page-exit-forward{transform:translate3d(0,-100vh,0)}
+body.page-exit-backward{transform:translate3d(0,100vh,0)}
+@media(prefers-reduced-motion:reduce){body{transition:none}}

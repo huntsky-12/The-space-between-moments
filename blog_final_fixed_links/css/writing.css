@@ -1,0 +1,724 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&display=swap");
+
+:root{
+  --paper:#f4f1eb;
+  --ink:#171717;
+  --muted:#77736d;
+  --line:#c9c4bb;
+}
+
+*{box-sizing:border-box}
+
+html,body{
+  margin:0;
+  min-height:100%;
+  background:var(--paper);
+}
+
+html{scroll-behavior:smooth}
+
+body{
+  color:var(--ink);
+  font-family:"Cormorant Garamond",Georgia,serif;
+  font-size:18px;
+  line-height:1.55;
+}
+
+/* =========================================================
+   DILKASHI — REFERENCE MATCH
+   The reference is a warm-paper editorial reading page:
+   title/copy on the left, illustration floating on the right.
+   ========================================================= */
+
+.writing-header{
+  position:fixed;
+  z-index:50;
+  top:0;
+  left:0;
+  width:100%;
+  height:74px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 5.9%;
+  background:rgba(244,241,235,.96);
+}
+
+.writing-brand{
+  color:var(--ink);
+  text-decoration:none;
+  font-size:12px;
+  font-weight:600;
+  letter-spacing:3px;
+  line-height:1;
+}
+
+.writing-menu{
+  position:relative;
+  width:31px;
+  height:31px;
+  display:block;
+}
+
+.writing-menu span{
+  position:absolute;
+  left:3px;
+  width:23px;
+  height:1px;
+  background:var(--ink);
+}
+
+.writing-menu span:nth-child(1){top:7px}
+.writing-menu span:nth-child(2){top:15px}
+.writing-menu span:nth-child(3){top:23px}
+
+.chapter-progress{
+  position:fixed;
+  z-index:60;
+  top:0;
+  left:0;
+  width:100%;
+  height:2px;
+}
+
+.chapter-progress span{
+  display:block;
+  width:0;
+  height:100%;
+  background:var(--ink);
+}
+
+/* Main page is NOT split into two scrolling halves. */
+.chapter{
+  position:relative;
+  width:100%;
+  min-height:100vh;
+  margin:0;
+  padding:0;
+  overflow:hidden;
+}
+
+.chapter-copy{
+  position:relative;
+  z-index:3;
+  width:54%;
+  max-width:790px;
+  min-height:100vh;
+  padding:86px 4.2% 80px 6%;
+  overflow:visible;
+}
+
+/* ---------- Hero ---------- */
+
+.hero{
+  min-height:auto;
+  display:block;
+  padding:0 0 78px;
+}
+
+.chapter-number{
+  margin:0 0 17px;
+  color:#77736d;
+  font-size:11px;
+  font-weight:600;
+  letter-spacing:3px;
+  line-height:1;
+  text-transform:uppercase;
+}
+
+.hero h1{
+  margin:0;
+  color:var(--ink);
+  font-size:clamp(66px,6.7vw,108px);
+  font-weight:500;
+  line-height:.86;
+  letter-spacing:.2px;
+}
+
+.hero-subtitle{
+  max-width:530px;
+  margin-top:31px;
+  color:#5e5a55;
+  font-size:clamp(20px,1.8vw,28px);
+  font-style:italic;
+  line-height:1.42;
+}
+
+.scroll-indicator{
+  margin-top:48px;
+  color:#77736d;
+  font-size:11px;
+  font-weight:600;
+  letter-spacing:3px;
+  line-height:1;
+  text-transform:uppercase;
+}
+
+/* ---------- Reading copy ---------- */
+
+.section{
+  width:100%;
+  max-width:650px;
+  margin:0;
+  padding:68px 0;
+}
+
+.section-label{
+  margin-bottom:25px;
+  color:#77736d;
+  font-size:11px;
+  font-weight:600;
+  letter-spacing:3px;
+  line-height:1;
+  text-transform:uppercase;
+}
+
+.section h2{
+  margin:0 0 38px;
+  color:var(--ink);
+  font-size:clamp(34px,3.5vw,52px);
+  font-weight:500;
+  line-height:1;
+  letter-spacing:.1px;
+}
+
+.section p{
+  margin:0 0 25px;
+  color:var(--ink);
+  font-size:clamp(19px,1.6vw,24px);
+  font-weight:400;
+  line-height:1.66;
+}
+
+.pause{
+  margin:47px 0;
+  padding:4px 0 4px 22px;
+  border-left:1px solid var(--ink);
+}
+
+.pause p{
+  margin:0;
+  font-size:clamp(22px,1.9vw,28px);
+  font-style:italic;
+  line-height:1.35;
+}
+
+.standalone{
+  margin:48px 0;
+  color:var(--ink);
+  text-align:center;
+  font-size:clamp(25px,2.2vw,33px);
+  font-style:italic;
+  line-height:1.35;
+}
+
+.bold-line{
+  font-weight:600;
+  font-style:normal;
+}
+
+.divider{
+  width:42px;
+  margin:16px 0;
+  border-top:1px solid var(--ink);
+}
+
+.what-if{
+  min-height:66vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:flex-start;
+  padding:80px 0;
+  text-align:left;
+}
+
+.what-if .small{
+  margin-bottom:22px;
+  color:#77736d;
+  font-size:11px;
+  font-weight:600;
+  letter-spacing:3px;
+  text-transform:uppercase;
+}
+
+.what-if h2{
+  margin:0;
+  color:var(--ink);
+  font-size:clamp(43px,4.8vw,72px);
+  font-weight:500;
+  line-height:.98;
+}
+
+.what-if p{
+  max-width:500px;
+  margin:28px 0 0;
+  color:var(--ink);
+  font-size:clamp(19px,1.7vw,25px);
+  font-style:italic;
+}
+
+.ending{
+  min-height:85vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  width:100%;
+  margin:0;
+  padding:100px 0;
+}
+
+.ending h2{
+  margin:0 0 38px;
+  font-size:clamp(39px,4.2vw,60px);
+  font-weight:500;
+  line-height:1;
+}
+
+.ending p{
+  margin:0 0 23px;
+  font-size:clamp(19px,1.6vw,24px);
+  line-height:1.66;
+}
+
+.final-lines{
+  margin-top:50px;
+  font-size:clamp(20px,1.8vw,26px);
+  line-height:1.55;
+  text-align:center;
+}
+
+.final-lines strong{font-weight:600}
+
+.chapter-footer{
+  padding:65px 0 28px;
+  color:#77736d;
+  font-size:11px;
+  font-weight:600;
+  letter-spacing:3px;
+  text-transform:uppercase;
+}
+
+.chapter-home{
+  display:block;
+  width:max-content;
+  margin:0 0 60px;
+  padding-bottom:3px;
+  color:var(--ink);
+  border-bottom:1px solid var(--ink);
+  text-decoration:none;
+  font-size:11px;
+  font-weight:600;
+  letter-spacing:3px;
+}
+
+/* ---------- Share rail, matching reference ---------- */
+
+.chapter-copy::before{
+  content:"SHARE";
+  position:absolute;
+  left:1.5%;
+  top:290px;
+  color:#77736d;
+  font-size:9px;
+  font-weight:600;
+  letter-spacing:2px;
+  writing-mode:horizontal-tb;
+}
+
+/* ---------- Illustration ---------- */
+
+.chapter-art{
+  position:fixed;
+  z-index:1;
+  top:74px;
+  right:0;
+  width:47%;
+  height:calc(100vh - 74px);
+  background:var(--paper);
+  overflow:hidden;
+}
+
+.chapter-art__inner{
+  position:absolute;
+  inset:3% 3% 2% 0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.chapter-art img{
+  display:block;
+  width:min(100%,900px);
+  height:min(100%,900px);
+  object-fit:contain;
+  object-position:center;
+  mix-blend-mode:multiply;
+  opacity:.88;
+}
+
+/* Mobile: same composition, but the illustration moves below the writing. */
+@media (max-width:700px){
+  body{font-size:17px}
+
+  .writing-header{
+    height:64px;
+    padding:0 7%;
+  }
+
+  .writing-brand{
+    font-size:10px;
+    letter-spacing:2.5px;
+  }
+
+  .chapter{
+    min-height:0;
+    overflow:visible;
+  }
+
+  .chapter-copy{
+    width:100%;
+    max-width:none;
+    min-height:0;
+    padding:84px 8% 40px;
+  }
+
+  .chapter-copy::before{display:none}
+
+  .hero{
+    padding-bottom:58px;
+  }
+
+  .chapter-number{
+    font-size:10px;
+    letter-spacing:2.5px;
+  }
+
+  .hero h1{
+    font-size:clamp(60px,18vw,92px);
+    line-height:.86;
+  }
+
+  .hero-subtitle{
+    margin-top:26px;
+    font-size:19px;
+  }
+
+  .scroll-indicator{
+    margin-top:43px;
+    font-size:10px;
+    letter-spacing:2.5px;
+  }
+
+  .section{
+    max-width:none;
+    padding:62px 0;
+  }
+
+  .section-label{
+    margin-bottom:22px;
+    font-size:10px;
+    letter-spacing:2.5px;
+  }
+
+  .section h2{
+    margin-bottom:30px;
+    font-size:34px;
+  }
+
+  .section p{
+    font-size:18px;
+    line-height:1.64;
+    margin-bottom:23px;
+  }
+
+  .pause{
+    margin:42px 0;
+    padding-left:18px;
+  }
+
+  .standalone{
+    margin:44px 0;
+    font-size:25px;
+  }
+
+  .what-if{
+    min-height:70vh;
+    padding:70px 0;
+  }
+
+  .what-if h2{
+    font-size:42px;
+  }
+
+  .ending{
+    min-height:80vh;
+    padding:80px 0;
+  }
+
+  .chapter-art{
+    position:relative;
+    top:auto;
+    right:auto;
+    width:100%;
+    height:58vh;
+    min-height:390px;
+    border-top:1px solid rgba(23,23,23,.06);
+  }
+
+  .chapter-art__inner{
+    inset:0 3% 3%;
+  }
+
+  .chapter-art img{
+    width:96%;
+    height:96%;
+  }
+}
+
+
+/* =========================================================
+   FINAL TYPOGRAPHY / STRUCTURE PASS
+   Tuned against the supplied reference.
+   ========================================================= */
+
+/* The old back-link was appearing as stray floating text. */
+.chapter-back{
+  display:none !important;
+}
+
+/* Keep the editorial header clean and anchored. */
+.writing-header{
+  height:72px;
+  padding:0 5.8%;
+}
+
+/* The left column needs a deliberate vertical rhythm,
+   not a giant hero followed by a huge empty gap. */
+.chapter-copy{
+  width:53%;
+  max-width:760px;
+  padding:108px 5.2% 90px 5.8%;
+}
+
+/* Reference-like small chapter label: visible, but understated. */
+.chapter-number{
+  margin:0 0 18px;
+  color:#6f6a63;
+  font-size:11px;
+  font-weight:600;
+  letter-spacing:3.4px;
+  line-height:1.1;
+}
+
+/* Title: smaller than the previous version, heavier and cleaner. */
+.hero h1{
+  margin:0;
+  color:#151515;
+  font-size:clamp(58px,5.2vw,78px);
+  font-weight:500;
+  line-height:.94;
+  letter-spacing:-.15px;
+}
+
+/* The reference subtitle is compact and readable rather than oversized. */
+.hero-subtitle{
+  max-width:555px;
+  margin-top:29px;
+  color:#625d56;
+  font-size:clamp(19px,1.55vw,23px);
+  font-weight:400;
+  font-style:italic;
+  line-height:1.55;
+}
+
+/* Small instruction, aligned with the copy rather than floating. */
+.scroll-indicator{
+  margin-top:42px;
+  color:#6f6a63;
+  font-size:10px;
+  font-weight:600;
+  letter-spacing:3.2px;
+  line-height:1;
+}
+
+/* Bring the first writing section into the composition sooner. */
+.hero{
+  padding:0 0 42px;
+}
+
+.section{
+  max-width:620px;
+  padding:50px 0 58px;
+}
+
+.section-label{
+  margin:0 0 19px;
+  color:#6f6a63;
+  font-size:10px;
+  font-weight:600;
+  letter-spacing:3.1px;
+  line-height:1.2;
+}
+
+.section h2{
+  margin:0 0 28px;
+  color:#151515;
+  font-size:clamp(31px,3vw,43px);
+  font-weight:500;
+  line-height:1.08;
+  letter-spacing:0;
+}
+
+.section p{
+  margin:0 0 19px;
+  color:#171717;
+  font-size:clamp(18px,1.42vw,21px);
+  font-weight:400;
+  line-height:1.63;
+}
+
+/* Stronger editorial emphasis without making the whole page bold. */
+.pause{
+  margin:35px 0;
+  padding:3px 0 3px 18px;
+  border-left:1px solid #171717;
+}
+
+.pause p{
+  margin:0;
+  color:#171717;
+  font-size:clamp(20px,1.65vw,24px);
+  font-weight:500;
+  font-style:italic;
+  line-height:1.42;
+}
+
+.standalone{
+  margin:38px 0;
+  color:#171717;
+  font-size:clamp(22px,1.9vw,27px);
+  font-weight:500;
+  line-height:1.4;
+}
+
+.divider{
+  width:42px;
+  margin:0 0 3px;
+  border-top:1px solid #171717;
+}
+
+/* Remove the stray pseudo SHARE label from the far-left gutter. */
+.chapter-copy::before{
+  display:none !important;
+}
+
+/* Keep the illustration exactly in the successful position,
+   only give it a little more visual authority. */
+.chapter-art{
+  top:72px;
+  width:47%;
+  height:calc(100vh - 72px);
+}
+
+.chapter-art__inner{
+  inset:1% 2% 1% 0;
+}
+
+.chapter-art img{
+  width:min(100%,920px);
+  height:min(100%,920px);
+  opacity:.88;
+}
+
+/* First section should read like the reference rather than
+   starting half below the viewport. */
+.chapter-copy > .section:first-of-type{
+  padding-top:34px;
+}
+
+/* Desktop: keep the writing comfortably inside the left half. */
+@media (min-width:1000px){
+  .chapter-copy{
+    padding-right:4.5%;
+  }
+}
+
+/* Mobile refinement */
+@media (max-width:700px){
+  .writing-header{
+    height:64px;
+    padding:0 7%;
+  }
+
+  .chapter-copy{
+    width:100%;
+    padding:88px 8% 40px;
+  }
+
+  .chapter-number{
+    margin-bottom:16px;
+    font-size:10px;
+  }
+
+  .hero h1{
+    font-size:clamp(55px,17vw,78px);
+    line-height:.93;
+  }
+
+  .hero-subtitle{
+    margin-top:24px;
+    font-size:18px;
+    line-height:1.52;
+  }
+
+  .scroll-indicator{
+    margin-top:38px;
+  }
+
+  .hero{
+    padding-bottom:35px;
+  }
+
+  .section{
+    padding:45px 0 52px;
+  }
+
+  .section h2{
+    font-size:33px;
+    line-height:1.08;
+  }
+
+  .section p{
+    font-size:18px;
+    line-height:1.62;
+  }
+
+  .chapter-art{
+    top:auto;
+    width:100%;
+    height:58vh;
+  }
+}
+
+
+/* =========================================================
+   INLINE ITALICS
+   Markdown *text* is converted to semantic <em>text</em>.
+   ========================================================= */
+
+.section em,
+.pause em,
+.standalone em,
+.what-if em,
+.ending em,
+.hero-subtitle em {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.section em {
+  color: inherit;
+}

@@ -1,0 +1,64 @@
+/* =========================================================
+   INSANITY IS A BANE — NATIVE VERTICAL CANVAS
+
+   The browser owns vertical scrolling.
+   This is deliberate: trackpads work immediately without focus/click,
+   while scroll-snap keeps every scene locked to one full viewport.
+   ========================================================= */
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  background: #050505;
+}
+
+body {
+  overflow: hidden;
+}
+
+.site-viewport {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100svh;
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+  overscroll-behavior-y: contain;
+  -webkit-overflow-scrolling: touch;
+
+  scrollbar-width: none;
+}
+
+.site-viewport::-webkit-scrollbar {
+  display: none;
+}
+
+.site-track {
+  width: 100%;
+  height: auto;
+  transform: none;
+  transition: none;
+  will-change: auto;
+}
+
+.site-scene {
+  position: relative;
+  width: 100%;
+  height: 100svh;
+  min-height: 620px;
+  overflow: hidden;
+
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-viewport {
+    scroll-behavior: auto;
+  }
+}

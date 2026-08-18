@@ -1,0 +1,716 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#050505">
+  <title>Insanity Is a Bane.</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/page2.css">
+    <link rel="stylesheet" href="css/site.css">
+
+<style id="page3-new-styles">
+
+:root {
+  --bg: #050505;
+  --text: #f4f1eb;
+  --muted: #bdb8af;
+  --line: rgba(244,241,235,.30);
+}
+
+* { box-sizing: border-box; }
+
+.page3-new {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+.page3-new {
+  overflow: hidden;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Cormorant Garamond", Georgia, serif;
+}
+
+.page3-new {
+  position: relative;
+  width: 100%;
+  height: 100svh;
+  min-height: 620px;
+  overflow: hidden;
+  background: var(--bg);
+}
+
+/* subtle atmosphere */
+.stars {
+  position: absolute;
+  inset: 0;
+  opacity: .65;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 13% 8%, #fff 0 1px, transparent 1.4px),
+    radial-gradient(circle at 33% 5%, #fff 0 1px, transparent 1.4px),
+    radial-gradient(circle at 48% 20%, #fff 0 1px, transparent 1.4px),
+    radial-gradient(circle at 67% 7%, #fff 0 1px, transparent 1.4px),
+    radial-gradient(circle at 91% 18%, #fff 0 1px, transparent 1.4px);
+}
+
+/* header */
+.brand {
+  position: absolute;
+  z-index: 5;
+  top: 4.4%;
+  left: 5.2%;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 3px;
+}
+
+.close {
+  position: absolute;
+  z-index: 10;
+  top: 3.1%;
+  right: 4.8%;
+  width: 32px;
+  height: 32px;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.close::before,
+.close::after {
+  content: "";
+  position: absolute;
+  top: 15px;
+  left: 6px;
+  width: 20px;
+  height: 1px;
+  background: var(--text);
+}
+
+.close::before { transform: rotate(45deg); }
+.close::after  { transform: rotate(-45deg); }
+
+/* menu */
+.menu {
+  position: absolute;
+  z-index: 5;
+  top: 29%;
+  left: 11.8%;
+  display: flex;
+  flex-direction: column;
+  gap: 31px;
+}
+
+.menu a {
+  position: relative;
+  width: max-content;
+  color: var(--text-main);
+  text-decoration: none;
+
+  /* Same typography language as Pages 1 & 2 */
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(27px, 2.25vw, 39px);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 3.8px;
+
+  transition: opacity .2s ease;
+}
+
+.menu a:hover {
+  opacity: .68;
+}
+
+.menu a:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -16px;
+  width: 58px;
+  height: 1px;
+  transform: translateX(-50%);
+  background: var(--line);
+}
+
+/* generated still-life image */
+.still-life {
+  position: absolute;
+  z-index: 2;
+  right: 0;
+  bottom: 0;
+  width: 63%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.still-life img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 62% center;
+  mix-blend-mode: screen;
+  opacity: .95;
+}
+
+/*
+  The generated image already contains deep black negative space.
+  Screen blending lets that black disappear into the page while
+  retaining the bulb, desk, notebook, pen and cup.
+*/
+
+/* footer */
+.footer {
+  position: absolute;
+  z-index: 5;
+  left: 5.2%;
+  bottom: 3.2%;
+}
+
+.socials {
+  display: flex;
+  gap: 22px;
+  margin-bottom: 28px;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+}
+
+.socials a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.copyright {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.7;
+  letter-spacing: .4px;
+}
+
+@media (max-width: 900px) {
+  .menu {
+    left: 8%;
+  }
+
+  .still-life {
+    width: 67%;
+  }
+
+  .menu a {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 600px) {
+  .brand {
+    top: 3.8%;
+    left: 6%;
+    font-size: 10px;
+    letter-spacing: 2.4px;
+  }
+
+  .menu {
+    top: 30%;
+    left: 9%;
+    gap: 25px;
+  }
+
+  .menu a {
+    font-size: 21px;
+    letter-spacing: 4px;
+  }
+
+  .still-life {
+    width: 82%;
+    height: 72%;
+  }
+
+  .still-life img {
+    object-position: 65% center;
+  }
+
+  .footer {
+    left: 6%;
+    bottom: 3%;
+  }
+
+  .socials {
+    margin-bottom: 16px;
+    gap: 17px;
+  }
+
+  .copyright {
+    font-size: 10px;
+  }
+}
+
+</style>
+<style id="page4-styles">
+/* =========================================================
+   PAGE 04 — WRITINGS INDEX
+   Editorial collection tree
+   ========================================================= */
+.page4{
+  position:relative;width:100%;height:100svh;min-height:620px;
+  overflow:hidden;background:#f4f1eb;color:#171717;
+  font-family:"Cormorant Garamond",Georgia,serif;
+}
+.page4__brand{
+  position:absolute;top:4.4%;left:5.2%;
+  font-size:13px;letter-spacing:3px;font-weight:500;
+}
+.page4__menu{
+  position:absolute;top:4%;right:4.8%;
+  width:34px;height:34px;border:0;background:none;
+}
+.page4__menu span{
+  position:absolute;left:7px;width:19px;height:1px;background:#171717;
+}
+.page4__menu span:nth-child(1){top:9px}
+.page4__menu span:nth-child(2){top:16px}
+.page4__menu span:nth-child(3){top:23px}
+
+.page4__content{
+  position:absolute;inset:13% 8% 7% 8%;
+  display:flex;flex-direction:column;
+}
+.page4__heading{
+  margin:0 0 32px;
+  font-size:clamp(42px,5vw,68px);
+  font-weight:500;letter-spacing:2px;line-height:1;
+}
+.page4__rule{
+  width:50px;border-top:1px solid #171717;margin-bottom:28px;
+}
+.writing-list{
+  width:min(100%,1050px);
+  overflow:auto;
+  scrollbar-width:none;
+}
+.writing-list::-webkit-scrollbar{display:none}
+
+/* Collection heading */
+.writing-collection{
+  margin:0 0 42px;
+}
+
+.collection-heading{
+  min-height:54px;
+  margin:0 0 7px;
+  padding:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:22px;
+}
+
+.collection-heading::before,
+.collection-heading::after{
+  content:"";
+  flex:1 1 auto;
+  max-width:310px;
+  border-top:1px solid #171717;
+  opacity:.85;
+}
+
+.collection-heading > div{
+  flex:0 0 auto;
+  text-align:center;
+}
+
+.collection-heading h2{
+  margin:0;
+  color:#171717;
+  font-size:clamp(17px,1.45vw,21px);
+  font-weight:600;
+  letter-spacing:2.8px;
+  line-height:1;
+  white-space:nowrap;
+}
+
+.collection-heading p{
+  margin:6px 0 0;
+  color:#77736d;
+  font-size:12px;
+  font-style:italic;
+  letter-spacing:1px;
+  line-height:1;
+}
+
+/* Collection children — no vertical line on the left */
+.collection-tree{
+  position:relative;
+  margin-left:0;
+  padding-left:0;
+  border-left:0;
+}
+
+/* Keep the same writing-row design, only slightly smaller. */
+.writing-row{
+  position:relative;
+  min-height:105px;
+  display:grid;
+  grid-template-columns:22px 48px minmax(0,1fr) 170px;
+  align-items:center;
+  column-gap:13px;
+  border-bottom:1px solid #c9c4bb;
+  text-decoration:none;
+  color:#171717;
+}
+.writing-row:first-child{border-top:1px solid #c9c4bb}
+.writing-no{
+  font-size:14px;
+  letter-spacing:1px;
+}
+.writing-copy h2{
+  margin:0 0 4px;
+  font-size:clamp(22px,2vw,31px);
+  font-weight:500;
+  line-height:1.05;
+}
+.writing-copy p{
+  margin:0;
+  color:#6e6a64;
+  font-size:14px;
+  line-height:1.2;
+}
+.writing-art{
+  width:155px;
+  height:95px;
+  object-fit:contain;
+  justify-self:end;
+  filter:contrast(1.02);
+}
+.tree-mark{
+  position:relative;
+  margin-left:-39px;
+  width:25px;
+  color:#9a958d;
+  font-family:Georgia,serif;
+  font-size:18px;
+  line-height:1;
+  text-align:center;
+}
+.writing-child{
+  grid-template-columns:22px 48px minmax(0,1fr) 170px;
+  min-height:101px;
+}
+.writing-child .writing-copy h2{
+  font-size:clamp(20px,1.8vw,28px);
+  font-weight:500;
+}
+.writing-child .writing-copy p{
+  font-size:13px;
+}
+.writing-child .writing-art{
+  width:145px;
+  height:89px;
+}
+.writing-standalone{
+  grid-template-columns:48px minmax(0,1fr) 170px;
+  margin-top:4px;
+}
+.page4__footer{
+  position:absolute;left:8%;bottom:3.2%;
+  font-size:12px;color:#77736d;letter-spacing:.5px;
+}
+
+@media(max-width:700px){
+ .page4__content{inset:14% 7% 7%}
+ .collection-heading{
+   padding-left:35px;
+   gap:11px;
+ }
+ .collection-heading h2{
+   font-size:14px;
+   letter-spacing:2px;
+ }
+ .collection-heading p{font-size:11px}
+ .collection-tree{
+   margin-left:0;
+   padding-left:0;
+   border-left:0;
+ }
+ .writing-row{
+   grid-template-columns:18px 32px minmax(0,1fr) 100px;
+   min-height:92px;
+   column-gap:7px;
+ }
+ .writing-child{
+   grid-template-columns:18px 32px minmax(0,1fr) 100px;
+   min-height:88px;
+ }
+ .writing-art{
+   width:92px;height:72px;
+ }
+ .writing-child .writing-art{
+   width:88px;height:68px;
+ }
+ .writing-copy h2{
+   font-size:20px;
+ }
+ .writing-child .writing-copy h2{
+   font-size:19px;
+ }
+ .writing-copy p{
+   font-size:12px;
+ }
+ .writing-child .writing-copy p{
+   font-size:11px;
+ }
+ .tree-mark{
+   margin-left:-29px;
+   font-size:15px;
+ }
+ .writing-standalone{
+   grid-template-columns:32px minmax(0,1fr) 100px;
+ }
+}</style>
+</head>
+
+<body>
+  <div class="site-viewport">
+    <div class="site-track">
+
+      <section class="site-scene" id="page1">
+        <main class="hero">
+    <div class="hero__stars" aria-hidden="true"></div>
+
+    <div class="hero__moon" aria-hidden="true"></div>
+
+    <a class="menu" href="#page3" data-page="3" aria-label="Open menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </a>
+
+    <section class="hero__copy" aria-labelledby="hero-title">
+      <h1 id="hero-title">INSANITY<br>IS A BANE.</h1>
+
+      <p class="hero__subtitle">Some madness is worth keeping.</p>
+
+      <div class="hero__rule" aria-hidden="true"></div>
+    </section>
+
+    <!-- ENTER is intentionally independent of the text block:
+         it is centered against the viewport, not the title. -->
+    <a class="enter" href="#page2" data-page="2" aria-label="Enter the collection">
+      <span>ENTER</span>
+      <strong aria-hidden="true">↓</strong>
+    </a>
+
+    <figure class="hero__illustration">
+      <picture>
+        <source media="(max-width: 600px)" srcset="assets/bench-tree-mobile.png">
+        <img
+          src="assets/bench-tree-laptop.png"
+          alt="A solitary figure sitting on a bench beneath a tree"
+        >
+      </picture>
+    </figure>
+  </main>
+      </section>
+
+      <section class="site-scene" id="page2">
+        <main class="thought-page">
+    <header class="thought-page__header">
+      <span>01</span>
+      <a href="#page1" data-page="1" aria-label="Back to opening page">×</a>
+    </header>
+
+    <section class="thought" aria-labelledby="thought-title">
+      <p class="thought__eyebrow">A COLLECTION OF THOUGHTS</p>
+
+      <h1 id="thought-title">
+        Some stories are never lived.
+      </h1>
+
+      <p class="thought__line">
+        They are only felt.
+      </p>
+
+      <div class="thought__pause" aria-hidden="true"></div>
+
+      <p class="thought__after">
+        Some remain in our heads<br>
+        long after the moment has passed.
+      </p>
+    </section>
+
+    <a class="continue" href="#page3" data-page="3" aria-label="Continue to the writings">
+      <span>THE WRITINGS</span>
+      <strong>↓</strong>
+    </a>
+
+    <span class="page-number">01 / 03</span>
+  </main>
+      </section>
+
+      <section class="site-scene" id="page3"><main class="page3-new">
+
+  <div class="stars"></div>
+
+  <div class="brand">INSANITY IS A BANE.</div>
+
+  <button class="close" aria-label="Close"></button>
+
+  <nav class="menu" aria-label="Main navigation">
+    <a href="#page4" data-page="4">WRITINGS</a>
+    <a href="#">LETTERS</a>
+    <a href="#">RANDOM PIECES</a>
+  </nav>
+
+  <figure class="still-life" aria-hidden="true">
+    <img src="assets/page3-still-life.png" alt="">
+  </figure>
+
+  <footer class="footer">
+    <div class="socials">
+      <a href="#" aria-label="Instagram">◎</a>
+      <a href="#" aria-label="Twitter">♥</a>
+      <a href="#" aria-label="Email">✉</a>
+    </div>
+
+    <div class="copyright">
+      © 2025 Devesh<br>
+      All rights reserved.
+    </div>
+  </footer>
+
+</main></section>
+
+<section class="site-scene" id="page4">
+  <main class="page4">
+    <div class="page4__brand">INSANITY IS A BANE.</div>
+    <button class="page4__menu" type="button" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+
+    <section class="page4__content" aria-labelledby="writings-title">
+      <h1 class="page4__heading" id="writings-title">WRITINGS</h1>
+      <div class="page4__rule"></div>
+
+      <div class="writing-list">
+
+        <!-- COLLECTION: THE SEVEN STAGES OF LOVE -->
+        <div class="writing-collection">
+          <div class="collection-heading">
+            <div>
+              <h2>THE SEVEN STAGES OF LOVE</h2>
+              <p>a collection</p>
+            </div>
+          </div>
+
+          <div class="collection-tree">
+            <a class="writing-row writing-child" href="writings/dilkashi/index.html">
+              <span class="tree-mark"></span>
+              <span class="writing-no">01</span>
+              <span class="writing-copy">
+                <h2>Dilkashi</h2>
+                <p>The beginning of noticing.</p>
+              </span>
+              <img class="writing-art" src="assets/writings/dilkashi.png" alt="">
+            </a>
+          </div>
+        </div>
+
+        <!-- COLLECTION: THINGS I NEVER TOLD HER -->
+        <div class="writing-collection">
+          <div class="collection-heading">
+            <div>
+              <h2>THINGS I NEVER TOLD HER</h2>
+              <p>a collection</p>
+            </div>
+          </div>
+
+          <div class="collection-tree">
+            <a class="writing-row writing-child" href="writings/do-i-love-her/">
+              <span class="tree-mark"></span>
+              <span class="writing-no">01</span>
+              <span class="writing-copy">
+                <h2>Do I Love Her?</h2>
+                <p>The beginning of understanding.</p>
+              </span>
+              <img class="writing-art" src="assets/writings/do-i-love-her.png" alt="">
+            </a>
+
+            <a class="writing-row writing-child" href="writings/maybe-it-wasnt-love/">
+              <span class="tree-mark"></span>
+              <span class="writing-no">02</span>
+              <span class="writing-copy">
+                <h2>Maybe It Wasn't Love</h2>
+                <p>The beginning of doubt.</p>
+              </span>
+              <img class="writing-art" src="assets/writings/maybe-it-wasnt-love.png" alt="">
+            </a>
+
+            <a class="writing-row writing-child" href="writings/is-she-even-worth-it/">
+              <span class="tree-mark"></span>
+              <span class="writing-no">03</span>
+              <span class="writing-copy">
+                <h2>Is She Even Worth It?</h2>
+                <p>The beginning of wondering.</p>
+              </span>
+              <img class="writing-art" src="assets/writings/is-she-even-worth-it.png" alt="">
+            </a>
+
+            <a class="writing-row writing-child" href="writings/the-closure/">
+              <span class="tree-mark"></span>
+              <span class="writing-no">04</span>
+              <span class="writing-copy">
+                <h2>The Closure</h2>
+                <p>The beginning of acceptance.</p>
+              </span>
+              <img class="writing-art" src="assets/writings/the-closure.png" alt="">
+            </a>
+          </div>
+        </div>
+
+        <!-- STANDALONE WRITING -->
+
+    
+          <div class="writing-collection">
+          <div class="collection-heading">
+            <div>
+               <h2>STANDALONE</h2>
+              <p>pieces that belong to no collection</p>
+            </div>
+          </div>
+
+          <a class="writing-row writing-standalone"
+            href="writings/maybe-it-wasnt-meant/index.html">
+            <span class="writing-no">01</span>
+
+            <span class="writing-copy">
+              <h2>Maybe It Wasn't Meant to Happen</h2>
+              <p>The beginning of letting go.</p>
+            </span>
+
+            <img
+              class="writing-art"
+              src="assets/writings/maybe-it-wasnt-meant.png"
+              alt=""
+            >
+  </a>
+
+      </div>
+    </section>
+
+    <footer class="page4__footer">© 2025 Devesh · All rights reserved.</footer>
+  </main>
+</section>
+
+    </div>
+  </div>
+
+  <script src="js/site.js"></script>
+</body>
+</html>

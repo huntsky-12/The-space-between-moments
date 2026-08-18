@@ -1,6 +1,6 @@
 (() => {
   const API_BASE =
-    window.WRITINGS_API_URL || "http://127.0.0.1:8000";
+    window.WRITINGS_API_URL || "https://the-space-between-moments.onrender.com";
 
   const clientKey =
     "space-between-moments-client-id";
